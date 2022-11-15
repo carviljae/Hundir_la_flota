@@ -25,8 +25,14 @@ public class mostrar {
             }
             System.out.println();
         }
-        for (int t = 0; t < tableroPC.length; t++) {
-            System.out.print(t + "  ");
+        for (int t = -1; t < tableroPC.length - 1; t++) {
+
+            if (t == -1) {
+                System.out.print(" ");
+            } else {
+                System.out.print("  "+t );
+            }
+
         }
         System.out.println();
         System.out.println();
@@ -38,10 +44,14 @@ public class mostrar {
             }
             System.out.println();
         }
-        for (int t = 0; t < tableroPC.length; t++) {
-            System.out.print(t + "  ");
-        }
+        for (int t = -1; t < tableroPC.length - 1; t++) {
 
+            if (t == -1) {
+                System.out.print(" ");
+            } else {
+                System.out.print("  "+t );
+            }
+        }
     }
 
 
@@ -65,18 +75,24 @@ public class mostrar {
     private static void mostrarTablero(char[][] tablero, char[][] tableroDisparosJugador) {
         char letra = 'A';
 
-    for (int i = 0; i < tablero.length; i++, letra++) {
-        System.out.print(letra + "  ");
-        for (int j = 0; j < tablero.length - 1; j++) {
-            System.out.print(tablero[j][i] + "  ");
+        for (int i = 0; i < tablero.length; i++, letra++) {
+            System.out.print(letra + "  ");
+            for (int j = 0; j < tablero.length - 1; j++) {
+                System.out.print(tablero[j][i] + "  ");
+
+            }
+            System.out.println();
+        }
+        for (int t = -1; t < tablero.length - 1; t++) {
+
+            if (t == -1) {
+                System.out.print(" ");
+            } else {
+                System.out.print("  "+t );
+            }
+
 
         }
-        System.out.println();
-    }
-    for (int t = 0; t < tablero.length; t++) {
-        System.out.print(t + "  ");
-
-    }
 
         System.out.println();
         System.out.println();
@@ -88,14 +104,17 @@ public class mostrar {
             }
             System.out.println();
         }
-        for (int t = 0; t < tablero.length; t++) {
-            System.out.print(t + "  ");
+        for (int t = -1; t < tablero.length - 1; t++) {
+
+            if (t == -1) {
+                System.out.print(" ");
+            } else {
+                System.out.print("  "+t );
+            }
         }
         System.out.println();
         System.out.println();
     }
-
-
 
 }
 
