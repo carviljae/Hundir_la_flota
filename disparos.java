@@ -10,12 +10,5 @@ public class disparos {
 
 
     }
-   // public static boolean disparoJugador (char[][] tableroDisparosJugador, char[][] tableroPC){
-
-
-
-   // }
-
-
 
 }
