@@ -39,6 +39,7 @@ public class mostrar {
         char letras = 'A';
         for (int i = 0; i < tableroPC.length; i++, letras++) {
             System.out.print(letras + "  ");
+
             for (int j = 0; j < tableroPC.length - 1; j++) {
                 System.out.print(tableroPC[j][i] + "  ");
             }
