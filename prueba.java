@@ -1,18 +1,22 @@
 import java.util.Scanner;
-
 public class prueba {
-    public static void main(String[] args) {
+
+    public static boolean compruebaCoordenadas(char[][] tablero, char[][] tableroDisparosJugador){
         Scanner sc = new Scanner(System.in);
+        boolean correcto = false;
         String coordenadas;
-        boolean disparo=false;
-        char letra='A';
-        int num=1;
-
-        System.out.println("Dime las coodenadas: ");
+        System.out.println("Introduce una coordenada: ");
         coordenadas = sc.next();
-        while (disparo)
-            if (coordenadas.charAt(0) == letra && coordenadas.charAt(1) == num){
 
-            }
+        if (coordenadas.length()==2 && coordenadas.charAt(0) == 'A'+ tablero.length  ){
+            correcto=true;
+            System.out.println("coordenada valida");
+        }
+        else {
+            correcto = false;
+            System.out.println("coordenada no valida");
+        }
+
+        return correcto;
     }
 }
