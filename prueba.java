@@ -11,10 +11,17 @@ public class prueba {
         if(Character.isLetter(coordenadas.charAt(0)) && Character.isDigit(coordenadas.charAt(1))&&coordenadas.length()==2){
             correcto = true;
             System.out.println("coordenada  valida");
-        }else{
+            if (coordenadas.charAt(1)>=0&&coordenadas.charAt(1)< tablero.length)
+            System.out.println("coordenada  valida");
+            if (coordenadas.charAt(0)<'A' && coordenadas.charAt(0)> tablero.length) {
+                correcto = false;
+                System.out.println("coordenada  no valida");
+            }
+        }else if (coordenadas.charAt(0)<'A' && coordenadas.charAt(0)> tablero.length){
             correcto = false;
             System.out.println("coordenada  no valida");
-        }
+        }else
+            System.out.println("coordenada  no valida");
 
         return correcto;
     }
