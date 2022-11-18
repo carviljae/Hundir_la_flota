@@ -1,28 +1,29 @@
 import java.util.Scanner;
 public class prueba {
+    String[] portaaviones = new String[5];
+    String[] destructor = new String[4];
+    String[] submarino = new String[3];
+    String[] pesquero = new String[1];
 
-    public static boolean compruebaCoordenadas(char[][] tablero, char[][] tableroDisparosJugador){
+    public static void coordenadabarco(){
+        entrada.pidecoordenada();
+    }
+    public static void posicionbarco(){
         Scanner sc = new Scanner(System.in);
-        boolean correcto = false;
-        String coordenadas;
-        System.out.println("Introduce una coordenada: ");
-        coordenadas = sc.next();
+        String pos;
+        System.out.println("Quieres el barco en posición Vertical(V) u Horizontal(H)?");
+        pos = sc.next();
+        colocarbarco(pos);
+    }
+    public static void colocarbarco(String pos){
+        if (pos=="V"){
+            vertical(tablero, coordenadas);
+        } else if (pos=="H") {
 
-        if(Character.isLetter(coordenadas.charAt(0)) && Character.isDigit(coordenadas.charAt(1))&&coordenadas.length()==2){
-            correcto = true;
-            System.out.println("coordenada  valida");
-            if (coordenadas.charAt(1)>=0&&coordenadas.charAt(1)< tablero.length)
-            System.out.println("coordenada  valida");
-            if (coordenadas.charAt(0)<'A' && coordenadas.charAt(0)> tablero.length) {
-                correcto = false;
-                System.out.println("coordenada  no valida");
-            }
-        }else if (coordenadas.charAt(0)<'A' && coordenadas.charAt(0)> tablero.length){
-            correcto = false;
-            System.out.println("coordenada  no valida");
         }else
-            System.out.println("coordenada  no valida");
+            System.out.println("LEE BIEN");
+    }
+    public static void vertical(char[][]tablero,String coordenadas){
 
-        return correcto;
     }
 }
