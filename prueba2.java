@@ -1,46 +1,32 @@
 import java.util.Scanner;
 public class prueba2 {
 
-    public static boolean compruebaCoordenadas(char[][] tablero, char[][] tableroDisparosJugador){
-        Scanner sc = new Scanner(System.in);
-        String coordenadas;
-        System.out.println("Introduce una coordenada: ");
-        coordenadas = sc.next();
-
-        tamañocoordenada(coordenadas);
-        caractercoordenada(coordenadas);
-        numerocoordenada(coordenadas);
-        return compruebaCoordenadas(tablero,tableroDisparosJugador);
-    }
     public static void pidecoordenada(){
         Scanner sc = new Scanner(System.in);
         String coordenadas;
         System.out.println("Introduce una coordenada: ");
         coordenadas = sc.next();
+        tamañocoordenada(coordenadas);
+        caractercoordenada(coordenadas);
+        numerocoordenada(coordenadas);
     }
     public static void tamañocoordenada(String coordenadas){
-        boolean correcto = false;
+
         if (coordenadas.length()==2) {
-            correcto = true;
+            System.out.println("Coordenada del tamaño correcto");
         }else
-            correcto=false;
-        System.out.println("Coordenada del tamaño equivocado");
+            System.out.println("Coordenada del tamaño equivocado");
     }
     public static void caractercoordenada(String coordenadas){
-        boolean correcto = false;
-        if (coordenadas.charAt(0)<'K'){
-            correcto=true;
+        if (coordenadas.charAt(0)<='K' && coordenadas.charAt(0)>='A' || coordenadas.charAt(0)<='k' && coordenadas.charAt(0)>='a'){
+            System.out.println("El primer caracter es una letra");
         }else
-            correcto=false;
-        System.out.println("El primer caracter no es letra");
+            System.out.println("El primer caracter no es letra o esta fuera del rango");
     }
     public static void numerocoordenada(String coordenadas){
-        boolean correcto = false;
-        if (coordenadas.charAt(1)<10){
-            correcto=true;
+        if (coordenadas.charAt(1)<=57 && coordenadas.charAt(1)>=48){
+            System.out.println("El segundo caracter si es numero");
         }else
-            correcto=false;
-        System.out.println("El segundo caracter no es numero");
+            System.out.println("El segundo caracter no es numero");
     }
-
 }

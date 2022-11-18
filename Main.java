@@ -3,8 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        String coordenadas="";
+        
         char[][] tablero = new char[11][11];
         char[][] tableroDisparosJugador = new char[11][11];
         char[][] tableroPC = new char[11][11];
@@ -17,8 +16,5 @@ public class Main {
         mostrar.mostrarTablero2(tableroPC, tableroDisparosPC);
 
         prueba2.pidecoordenada();
-        prueba2.tamañocoordenada(coordenadas);
-        prueba2.caractercoordenada(coordenadas);
-        prueba2.numerocoordenada(coordenadas);
     }
 }
