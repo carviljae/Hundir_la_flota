@@ -16,9 +16,9 @@ public class Main {
         mostrar.mostrarTablero(tablero, tableroDisparosJugador);
         mostrar.mostrarTablero2(tableroPC, tableroDisparosPC);
 
-       
-       prueba.compruebaCoordenadas(tablero, tableroDisparosJugador);
-
-
+        prueba2.pidecoordenada();
+        prueba2.tamañocoordenada(coordenadas);
+        prueba2.caractercoordenada(coordenadas);
+        prueba2.numerocoordenada(coordenadas);
     }
 }
