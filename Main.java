@@ -15,6 +15,6 @@ public class Main {
         mostrar.mostrarTablero(tablero, tableroDisparosJugador);
         mostrar.mostrarTablero2(tableroPC, tableroDisparosPC);
 
-        prueba2.pidecoordenada();
+        entrada.pidecoordenada();
     }
 }
