@@ -5,25 +5,26 @@ public class Barcos {
     String[] destructor = new String[4];
     String[] submarino = new String[3];
     String[] pesquero = new String[1];
-    public static void coordenadabarco(){
-        Entrada.pidecoordenada();
+    public static void coordenadaBarco(){
+
+        Entrada.pideCoordenada();
     }
-    public static void posicionbarco(){
+    public static void posicionBarco(){
         Scanner sc = new Scanner(System.in);
         String pos;
         System.out.println("Quieres el barco en posición Vertical(V) u Horizontal(H)?");
         pos = sc.next();
-        colocarbarco(pos);
+        colocarBarco(pos);
     }
-    public static void colocarbarco(String pos){
+    public static void colocarBarco(String pos){
         if (pos=="V"){
-           // vertical(tablero, coordenadas);
+         // vertical(tablero, coordenadas);
         } else if (pos=="H") {
 
         }else
             System.out.println("LEE BIEN");
     }
-    //public static void vertical(char[][]tablero,String coordenadas){
+    public static void vertical(char[][]tablero,String coordenadas){
 
-    //}
+    }
 }

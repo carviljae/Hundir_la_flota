@@ -1,17 +1,17 @@
 import java.util.Scanner;
 public class Entrada {
-    public static void pidecoordenada(){
+    public static void pideCoordenada(){
         Scanner sc = new Scanner(System.in);
         String coordenadas;
         System.out.println("Introduce una coordenada: ");
         coordenadas = sc.next().toUpperCase();
 
         if(!esCorrectoTamanyo(coordenadas)){
-            pidecoordenada();
+            pideCoordenada();
         } else if(!primerCaracterLetra(coordenadas)){
-            pidecoordenada();
+            pideCoordenada();
         } else if (!segundoCaracterNumero(coordenadas)) {
-            pidecoordenada();
+            pideCoordenada();
         } else
             System.out.println("Coordenada aceptada");
     }
