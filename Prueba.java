@@ -38,7 +38,6 @@ public class Prueba {
                 }else {
                 System.out.println("LEE BIEN");
             }
-
         }
        // public static void vertical(char[][]tablero,String coordenadas){
 
