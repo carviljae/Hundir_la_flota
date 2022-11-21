@@ -19,10 +19,10 @@ public class Prueba2 {
             Entrada.pideCoordenada();
         } else
             System.out.println("Coordenada aceptada");
-       // cambioTableroDisparoJugador(coordenadas, tableroDisparosJugador);
+        //cambioTableroDisparoJugador(coordenadas, tableroDisparosJugador);
         return coordenadas;
     }
-   /* public static char cambioTableroDisparoJugador(String coordenadas, char[][] tableroDisparosJugador, ){
+  /* public static char cambioTableroDisparoJugador(String coordenadas, char[][] tableroDisparosJugador){
 
         //relleno
         for (int k = 0; k < tableroDisparosJugador[0].length; k++) {
