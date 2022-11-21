@@ -9,12 +9,12 @@ public class Main {
         char[][] tableroPC = new char[11][11];
         char[][] tableroDisparosPC = new char[11][11];
 
-        mostrar.rellenarTablero(tablero, tableroDisparosJugador);
-        mostrar.rellenarTableroPC(tableroPC, tableroDisparosPC);
+        Mostrar.rellenarTablero(tablero, tableroDisparosJugador);
+        Mostrar.rellenarTableroPC(tableroPC, tableroDisparosPC);
 
-        mostrar.mostrarTablero(tablero, tableroDisparosJugador);
-        mostrar.mostrarTablero2(tableroPC, tableroDisparosPC);
+        Mostrar.mostrarTablero(tablero, tableroDisparosJugador);
+        Mostrar.mostrarTablero2(tableroPC, tableroDisparosPC);
 
-        entrada.pidecoordenada();
+        Entrada.pidecoordenada();
     }
 }

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/*import java.util.Scanner;
 public class prueba {
     String[] portaaviones = new String[5];
     String[] destructor = new String[4];
@@ -27,4 +27,4 @@ public class prueba {
 
     }
 }
-
+*/

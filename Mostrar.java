@@ -1,4 +1,4 @@
-public class mostrar {
+public class Mostrar {
     static void mostrarTablero2(char[][] tableroPC, char[][] tableroDisparosPC) {
         char letra = 'A';
 
