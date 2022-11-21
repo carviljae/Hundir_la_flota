@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class barcos {
+public class Barcos {
     String[] portaaviones = new String[5];
     String[] destructor = new String[4];
     String[] submarino = new String[3];
     String[] pesquero = new String[1];
     public static void coordenadabarco(){
-        entrada.pidecoordenada();
+        Entrada.pidecoordenada();
     }
     public static void posicionbarco(){
         Scanner sc = new Scanner(System.in);

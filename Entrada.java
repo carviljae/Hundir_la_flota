@@ -13,7 +13,7 @@ public class Entrada {
         } else if (!segundoCaracterNumero(coordenadas)) {
             pidecoordenada();
         } else
-            pidecoordenada();
+            System.out.println("Coordenada aceptada");
     }
     public static boolean esCorrectoTamanyo(String coordenadas) {
         if (coordenadas.length() == 2) {
