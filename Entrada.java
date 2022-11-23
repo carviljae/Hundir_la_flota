@@ -33,7 +33,7 @@ public class Entrada {
     }
     //Comprueba que el primer caracter de la coordenada sea una letra entre la A y la K
     public static boolean primerCaracterLetra(String coordenadas){
-        if (coordenadas.charAt(0)<='K' && coordenadas.charAt(0)>='A'){
+        if (coordenadas.charAt(0)<='J' && coordenadas.charAt(0)>='A'){
             return true;
         }else {
             return false;
@@ -41,7 +41,7 @@ public class Entrada {
     }
     //Comprueba que el segundo caracter de la coordenada sea un numero entre el 0 y el 9
     public static boolean segundoCaracterNumero(String coordenadas){
-        if (coordenadas.charAt(1)<=57 && coordenadas.charAt(1)>=48){
+        if (coordenadas.charAt(1)<=56 && coordenadas.charAt(1)>=48){
             return true;
         }else {
             return false;

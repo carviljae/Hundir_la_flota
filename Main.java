@@ -4,10 +4,10 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         //Creamos las variables
-        char[][] tablero = new char[11][11];
-        char[][] tableroDisparosJugador = new char[11][11];
-        char[][] tableroPC = new char[11][11];
-        char[][] tableroDisparosPC = new char[11][11];
+        char[][] tablero = new char[10][10];
+        char[][] tableroDisparosJugador = new char[10][10];
+        char[][] tableroPC = new char[10][10];
+        char[][] tableroDisparosPC = new char[10][10];
         int[] barcos = {5,4,2,1};
         String coordenadas="";
 
@@ -16,10 +16,13 @@ public class Main {
         Mostrar.rellenarTableroPC(tableroPC, tableroDisparosPC);
 
         //Mostramos los tableros enteros
-        Mostrar.mostrarTableroJugador(tablero, tableroDisparosJugador);
+       Mostrar.mostrarTableroJugador(tablero, tableroDisparosJugador);
         Mostrar.mostrarTableroPC(tableroPC, tableroDisparosPC);
 
+
+
+
         //Nos pide saber la coordenada del barco y su orientacion
-        Prueba.posicionBarco(tablero, barcos,coordenadas);
+        Prueba.pideCoordendaDisparo(tablero, coordenadas);
     }
 }

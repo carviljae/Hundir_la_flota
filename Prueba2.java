@@ -1,130 +1,80 @@
+import java.util.Scanner;
+
 public class Prueba2 {
-static void mostrarTableroPC(char[][] tableroPC) {
-    char letra = 'A';
+    static int[] barcos = {5,4,2,1};
+    //Pide la coordenada para cada barco a colocar
+    public static void posicionBarco(char[][] tablero, int[] barcos,String coordenadas){
+        for (int i=0;i< barcos.length;i++){
+            System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Dime la coordenada donde quieres el barco " + barcos[i] + " casillas"+ ANSI_RESET);
+            //coordenadaBarco(coordenadas);
+            Scanner sc = new Scanner(System.in);
 
-    for (int i = 0; i < tableroPC.length; i++, letra++) {
-        for (int q = 0; q < 2; q++) {
-            System.out.print("        " + letra + "  ");
-            for (int h = 0; h < tableroPC.length - 1; h++) {
-             System.out.print(tableroPC[h][i] + "  ");
-            }
-        }
-        System.out.println();
-    }
-    for (int t = -1; t < tableroPC.length - 1; t++) {
-        if (t == -1) {
-            System.out.print("           ");
-        } else {
-            System.out.print("  " + t);
+            System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Introduce una coordenada: " + ANSI_RESET);
+            coordenadas = sc.next().toUpperCase();
+            pidePosicionBarco(tablero, coordenadas);
         }
     }
-    for (int t = -1; t < tableroPC.length - 1; t++) {
-        if (t == -1) {
-            System.out.print("         ");
-        } else {
-            System.out.print("  " + t);
-        }
-    }
-    System.out.println();
-    System.out.println();
-}
-    static void mostrarTableroDisparosPC(char[][] tableroDisparosPC) {
-        char letra = 'A';
+    //Pide una coordenada
+    public static String coordenadaBarco(String coordenadas){
+        //Entrada.pideCoordenada();
+        Scanner sc = new Scanner(System.in);
 
-        for (int i = 0; i < tableroDisparosPC.length; i++, letra++) {
-            for (int q = 0; q < 2; q++) {
-                System.out.print("        " + letra + "  ");
-                for (int h = 0; h < tableroDisparosPC.length - 1; h++) {
-                    System.out.print(tableroDisparosPC[h][i] + "  ");
-                }
-            }
-            System.out.println();
-        }
-        for (int t = -1; t < tableroDisparosPC.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("           ");
-            } else {
-                System.out.print("  " + t);
-            }
-        }
-        for (int t = -1; t < tableroDisparosPC.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("         ");
-            } else {
-                System.out.print("  " + t);
-            }
-        }
-        System.out.println();
-        System.out.println();
+        System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Introduce una coordenada: " + ANSI_RESET);
+        coordenadas = sc.next().toUpperCase();
+        return coordenadas;
     }
-    static void mostrarTableroJugador(char[][] tableroJugador) {
-        char letra = 'A';
+    //Pregunta la posición a colocar los barcos
+    public static void pidePosicionBarco(char[][] tablero,String coordenadas){
+        Scanner sc = new Scanner(System.in);
+        String pos;
+        System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Quieres el barco en posición Vertical(V) u Horizontal(H)?"+ ANSI_RESET);
+        pos = sc.next();
+        verticalHorizontal(pos);
+        crearBarco(pos, tablero, coordenadas);
+    }
+    //Comprueba que le dicen correctamente la posición
+    public static boolean verticalHorizontal(String pos){
+        if (pos.compareTo("V")==0){
+            System.out.println("vertical");
+            return true;
+        }else if(pos.compareTo("H")==0){
+            System.out.println("horizontal");
+            return true;
+        }else{
+            System.out.println(ANSI_BLACK_BACKGROUND+ANSI_RED+"error"+ANSI_RESET);
+            return false;
+        }
+    }
+    //Creamos el barco
+    public static void crearBarco(String pos, char[][] tablero, String coordenadas) {
 
-        for (int i = 0; i < tableroJugador.length; i++, letra++) {
-            for (int q = 0; q < 2; q++) {
-                System.out.print("        " + letra + "  ");
-                for (int h = 0; h < tableroJugador.length - 1; h++) {
-                    System.out.print(tableroJugador[h][i] + "  ");
-                }
-            }
-            System.out.println();
-        }
-        for (int t = -1; t < tableroJugador.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("           ");
-            } else {
-                System.out.print("  " + t);
-            }
-        }
-        for (int t = -1; t < tableroJugador.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("         ");
-            } else {
-                System.out.print("  " + t);
-            }
-        }
-        System.out.println();
-        System.out.println();
-    }
-static void mostrarTableroDisparosJugador(char[][] tableroDisparosJugador) {
-    char letra = 'A';
 
-    for (int i = 0; i < tableroDisparosJugador.length; i++, letra++) {
-        for (int q = 0; q < 1; q++) {
-            System.out.print("        " + letra + "  ");
+        if (pos.compareTo("V")==0) {
 
-        }
-        System.out.println();
-    }
-    for (int t = -1; t < tableroDisparosJugador.length - 1; t++) {
-        if (t == -1) {
-            System.out.print("           ");
-        } else {
-            System.out.print("  " + t);
-        }
-    }
-    for (int t = -1; t < tableroDisparosJugador.length - 1; t++) {
-        if (t == -1) {
-            System.out.print("         ");
-        } else {
-            System.out.print("  " + t);
-        }
-    }
-    System.out.println();
-    System.out.println();
-    }
-    static void rellenarTablero(char[][] tablero, char[][] tableroDisparosJugador) {
-        for (int k = 0; k < tablero[0].length; k++) {
-            for (int x = 0; x < 10; x++) {
-                tablero[x][k] = '~';
+                tablero[coordenadas.charAt(1)-48][coordenadas.charAt(0)-65]='*';
+
+            for (int i=0; i<barcos.length;i++) {
+                tablero[coordenadas.charAt(1)-48][i]='*';
+
             }
-        }
-    }
-    static void rellenarTableroPC(char[][] tableroPC, char[][] tableroDisparosPC) {
-        for (int k = 0; k < tableroPC[0].length; k++) {
-            for (int x = 0; x < 10; x++) {
-                tableroPC[x][k] = '~';
+            Mostrar.mostrarTableroJugador(tablero, tablero);
+        }else if (pos.compareTo("H")==0){
+            for (int i=0; i<barcos.length;i++) {
+                tablero[i][0] = '*';
             }
+            Mostrar.mostrarTableroJugador(tablero, tablero);
+
+        }else {
+            System.out.println(ANSI_BLACK_BACKGROUND+ANSI_RED+"LEE BIEN"+ ANSI_RESET);
         }
     }
+    //Colocamos el barco en el tablero
+    public static void colocarBarco(String pos, char[][] tablero){
+
+    }
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
+    public static final String ANSI_RED = "\u001B[31m";
+
 }
