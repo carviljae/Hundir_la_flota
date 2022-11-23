@@ -2,11 +2,11 @@ import java.util.Scanner;
 public class Prueba {
         static int[] barcos = {5,4,2,1};
         //Pide la coordenada para cada barco a colocar
-    public static void posicionBarco(char[][] tablero, int[] barcos){
+    public static void posicionBarco(char[][] tablero, int[] barcos,String coordenadas){
         for (int i=0;i< barcos.length;i++){
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Dime la coordenada donde quieres el barco " + barcos[i] + " casillas"+ ANSI_RESET);
             coordenadaBarco();
-            pidePosicionBarco(tablero);
+            pidePosicionBarco(tablero, coordenadas);
         }
     }
     //Pide una coordenada
@@ -14,13 +14,13 @@ public class Prueba {
             Entrada.pideCoordenada();
         }
         //Pregunta la posición a colocar los barcos
-    public static void pidePosicionBarco(char[][] tablero){
+    public static void pidePosicionBarco(char[][] tablero,String coordenadas){
         Scanner sc = new Scanner(System.in);
         String pos;
         System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Quieres el barco en posición Vertical(V) u Horizontal(H)?"+ ANSI_RESET);
         pos = sc.next();
         verticalHorizontal(pos);
-        crearBarco(pos, tablero);
+        crearBarco(pos, tablero,coordenadas);
     }
     //Comprueba que le dicen correctamente la posición
         public static boolean verticalHorizontal(String pos){
@@ -36,11 +36,11 @@ public class Prueba {
             }
         }
         //Creamos el barco
-        public static void crearBarco(String pos, char[][] tablero) {
-        //int k=coordenadas.charAt(0)-'A';
+        public static void crearBarco(String pos, char[][] tablero,String coordenadas) {
+        int k=coordenadas.charAt(0)-'A';
             if (pos.compareTo("V")==0) {
                 for (int i=0; i<barcos.length;i++) {
-                    tablero[i][0]='*';
+                    tablero[k][0]='*';
                 }
                 Mostrar.mostrarTableroJugador(tablero, tablero);
                 }else if (pos.compareTo("H")==0){

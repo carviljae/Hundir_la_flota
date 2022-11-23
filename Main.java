@@ -9,6 +9,7 @@ public class Main {
         char[][] tableroPC = new char[11][11];
         char[][] tableroDisparosPC = new char[11][11];
         int[] barcos = {5,4,2,1};
+        String coordenadas="";
 
         //Rellenamos los tableros con ~
         Mostrar.rellenarTableroJugador(tablero, tableroDisparosJugador);
@@ -19,6 +20,6 @@ public class Main {
         Mostrar.mostrarTableroPC(tableroPC, tableroDisparosPC);
 
         //Nos pide saber la coordenada del barco y su orientacion
-        Prueba.posicionBarco(tablero, barcos);
+        Prueba.posicionBarco(tablero, barcos,coordenadas);
     }
 }

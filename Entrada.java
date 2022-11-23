@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Entrada {
 
     //Pide una coordenada y llama a los metodos para comprobar que esté correcta
-    public static void pideCoordenada(){
+    public static String pideCoordenada(){
         Scanner sc = new Scanner(System.in);
         String coordenadas;
         System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Introduce una coordenada: " + ANSI_RESET);
@@ -20,7 +20,9 @@ public class Entrada {
             pideCoordenada();
         } else
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Coordenada aceptada"+ ANSI_RESET);
+        return coordenadas;
     }
+
     //Comprueba que el tamaño de la coordenada sea 2
     public static boolean esCorrectoTamanyo(String coordenadas) {
         if (coordenadas.length() == 2) {
