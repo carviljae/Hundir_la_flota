@@ -63,7 +63,7 @@ public class Test {
                         cont--;
                     }
                 }
-                Mostrar.mostrarTablero(tableroJugador, tableroDisparosJugador);
+                Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
             }else if (pos.compareTo("H")==0){
                 for (int q=0;q<1;q++) {
                     if ((coordenadas.charAt(1) - '0' - 3) + barcos[q] <= tableroJugador[1].length) {
@@ -75,7 +75,7 @@ public class Test {
                         cont--;
                     }
                 }
-                Mostrar.mostrarTablero(tableroJugador, tableroDisparosJugador);
+                Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
 
             }else {
                 System.out.println(ANSI_BLACK_BACKGROUND+ANSI_RED+"LEE BIEN"+ ANSI_RESET);

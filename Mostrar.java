@@ -1,9 +1,9 @@
 public class Mostrar {
-    public static void mostrarTablero(char[][] tablero, char[][] tableroDisparos) {
+    //CREAMOS LOS TABLEROS
+    public static void crearTablero(char[][] tablero, char[][] tableroDisparos) {
         char letra = 'A';
         int num = 0;
         int num2 = 0;
-
         for (int i=0;i<tablero.length;i++, letra++) {
             System.out.print("\t"+WHITE_BOLD_BRIGHT+(letra) + "\t"+ANSI_RESET);
             for (int j=0;j<tablero[0].length;j++ ) {
@@ -27,6 +27,7 @@ public class Mostrar {
         }
         System.out.println("\n");
     }
+    //RELLENA LOS TABLEROS
     public static void rellenarTablero(char[][] tablero){
         for (int i=0;i<tablero.length;i++) {
             for (int j=0;j<tablero.length;j++) {
@@ -34,9 +35,8 @@ public class Mostrar {
             }
         }
     }
+    //CODIGOS PARA USAR LOS COLORES
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String WHITE_BOLD_BRIGHT = "\033[1;97m";
     public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
-    public static final String ANSI_BLUE_BACKGROUND = "\u001B[40m";
 }

@@ -1,30 +1,29 @@
 import java.util.Scanner;
 
 public class Barcos {
-    String[] portaaviones = new String[5];
-    String[] destructor = new String[4];
-    String[] submarino = new String[3];
-    String[] pesquero = new String[1];
-    public static void coordenadaBarco(){
+    //COLOCA LOS BARCOS DEL PC PERO SI COLISIONAN O SALEN DEL MAPA PETA
+    //
+    //
+    //SIEMPRE SALEN EN HORIZONTAL
+    //
+    //
+    //
+    public static void colocarBarcosPC(char[][] tablero, int[] barcos) {
 
-        Entrada.pideCoordenada();
-    }
-    public static void posicionBarco(){
-        Scanner sc = new Scanner(System.in);
-        String pos;
-        System.out.println("Quieres el barco en posición Vertical(V) u Horizontal(H)?");
-        pos = sc.next();
-        colocarBarco(pos);
-    }
-    public static void colocarBarco(String pos){
-        if (pos=="V"){
-         // vertical(tablero, coordenadas);
-        } else if (pos=="H") {
-
-        }else
-            System.out.println("LEE BIEN");
-    }
-    public static void vertical(char[][]tablero,String coordenadas){
-
+        for (int cont = 0; cont < barcos.length; ++cont) {
+            int letra = (int) (Math.random() * 9);
+            int num = (int) (Math.random() * 9);
+            int sumador = 1;
+            for (int i = 0; i < 1; ++i) {
+                if ((num) + barcos[i] <= tablero[1].length) {
+                    for (int j = 0; j < barcos[cont]; ++j) {
+                        tablero[letra][num + sumador] = '#';
+                        ++sumador;
+                    }
+                } else {
+                    cont--;
+                }
+            }
+        }
     }
 }
