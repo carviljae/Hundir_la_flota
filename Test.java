@@ -9,7 +9,7 @@ public class Test {
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Introduce una coordenada: " + ANSI_RESET);
             coordenadas = sc.next().toUpperCase();
             compruebaCoordenadaBarco(coordenadas);
-            pidePosicionBarco(tableroJugador,tableroDisparosJugador,barcos, coordenadas);
+            pos=pidePosicionBarco(tableroJugador,tableroDisparosJugador,barcos, coordenadas);
             crearBarco(pos,barcos,tableroJugador,tableroDisparosJugador,coordenadas);
         }
     }
@@ -28,12 +28,16 @@ public class Test {
         return coordenadas;
     }
 
-    public static void pidePosicionBarco(char[][] tablero,char[][]tableroDisparosJugador, int[]barcos,String coordenadas){
+    public static String pidePosicionBarco(char[][] tablero,char[][]tableroDisparosJugador, int[]barcos,String coordenadas){
         Scanner sc = new Scanner(System.in);
         String pos;
         System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Quieres el barco en posición Vertical(V) u Horizontal(H)?"+ ANSI_RESET);
         pos = sc.next();
-        verticalHorizontal(pos);
+        while (!verticalHorizontal(pos)) {
+            System.out.println("Posición invalida, repitela");
+            pos = sc.next();
+        }
+        return pos;
     }
     //Comprueba que le dicen correctamente la posición
     public static boolean verticalHorizontal(String pos){
@@ -59,31 +63,38 @@ public class Test {
             int num = coordenadas.charAt(1) - numeroInicio;
             int sum = 0;
             int sum2 = 0;
-            if (pos.compareTo("0")==1) {
-                for (int i = 0; i < 1; ++i) {
-                    if ((num - 3) + barcos[i] < tableroJugador[1].length) {
+            if (pos.compareTo("V")==0) {
+                //for (int i = 0; i < 1; ++i) {
+                    int num2=barcos[contador];
+                    for (int j=0;j<num2;num2--){
+                        tableroJugador[letra+ sum][num] = '#';
+                        sum++;
+                        System.out.println(num2);
+                    }
+
+                   /* if ((num - 3) + barcos[i] < tableroJugador[1].length) {
                         for (int j = 0; j < barcos[contador]; ++j) {
-                            tableroJugador[letra][num + sum] = '#';
+                            tableroJugador[letra+ sum][num] = '#';
                             ++sum;
                         }
                     } else {
                         contador--;
-                    }
-                    Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
-                }
-            } else if (pos.compareTo("1")==1) {
+                    }*/
+
+               // }
+                Mostrar.crearTablero(tableroJugador,tableroDisparosJugador);
+            } else if (pos.compareTo("H")==0) {
                 for (int i = 0; i < 1; ++i) {
                     if ((num - 3) + barcos[i] <= tableroJugador[1].length) {
                         for (int j = 0; j < barcos[contador]; ++j) {
-                            tableroJugador[letra + sum2][coordenadas.charAt(1) - numeroInicio] = '#';
+                            tableroJugador[coordenadas.charAt(1) - numeroInicio][letra + sum2] = '#';
                             ++sum2;
                         }
                     } else {
                         contador--;
                     }
-                    Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
-                }
 
+                }
             } else{
                 contador--;
             }
