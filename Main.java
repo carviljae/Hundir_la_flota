@@ -10,6 +10,7 @@ public class Main {
         int[] barcos = {5,4,2,1};
         String coordenadas="";
         String pos="";
+        int posi=0;
         //RELLENA LOS TABLEROS
         Mostrar.rellenarTablero(tableroJugador);
         Mostrar.rellenarTablero(tableroDisparosJugador);
@@ -21,7 +22,7 @@ public class Main {
         Mostrar.crearTablero(tableroJugador,tableroDisparosJugador);
         Mostrar.crearTablero(tableroPC,tableroDisparosPC);
 
-        Test.posicionBarco(tableroJugador,barcos,tableroJugador,coordenadas);
+        Test.posicionBarco(pos,tableroJugador,barcos,tableroJugador,coordenadas);
         Disparos.pideCoordendaDisparo(tableroJugador,tableroDisparosJugador,tableroPC,tableroDisparosPC, coordenadas);
     }
 }

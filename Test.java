@@ -2,14 +2,15 @@ import java.util.Scanner;
 public class Test {
     static int[] barcos = {5,4,2,1};
     //Pide la coordenada para cada barco a colocar
-    public static void posicionBarco(char[][] tablero, int[] barcos, char[][]tableroDisparosJugador,String coordenadas){
+    public static void posicionBarco(String pos,char[][] tableroJugador, int[] barcos, char[][]tableroDisparosJugador,String coordenadas){
         for (int i=0;i< barcos.length;i++){
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Dime la coordenada donde quieres el barco " + barcos[i] + " casillas"+ ANSI_RESET);
             Scanner sc = new Scanner(System.in);
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Introduce una coordenada: " + ANSI_RESET);
             coordenadas = sc.next().toUpperCase();
             compruebaCoordenadaBarco(coordenadas);
-            pidePosicionBarco(tablero,tableroDisparosJugador,barcos, coordenadas);
+            pidePosicionBarco(tableroJugador,tableroDisparosJugador,barcos, coordenadas);
+            crearBarco(pos,barcos,tableroJugador,tableroDisparosJugador,coordenadas);
         }
     }
     public static String compruebaCoordenadaBarco(String coordenadas){
@@ -49,36 +50,42 @@ public class Test {
     }
     //Creamos el barco
     public static void crearBarco(String pos,int[]barcos, char[][] tableroJugador,char[][]tableroDisparosJugador, String coordenadas) {
-        int sumV = 0;
-        int sumH = 0;
-        for (int cont=0;cont< barcos.length;cont++){
-            if (pos.compareTo("V")==0) {
-                for (int q=0;q<1;q++){
-                    if ((coordenadas.charAt(1)-'0'-3)+barcos[q] <= tableroJugador[1].length){
-                        for (int i = 0; i < barcos[cont]; i++) {
-                            tableroJugador[coordenadas.charAt(0) - 'A' + sumV][coordenadas.charAt(1) - '0'] = '#';
-                            sumV++;
-                        }
-                    } else{
-                        cont--;
-                    }
-                }
-                Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
-            }else if (pos.compareTo("H")==0){
-                for (int q=0;q<1;q++) {
-                    if ((coordenadas.charAt(1) - '0' - 3) + barcos[q] <= tableroJugador[1].length) {
-                        for (int i = 0; i < barcos[cont]; i++) {
-                            tableroJugador[coordenadas.charAt(0) - 'A'][coordenadas.charAt(1) - '0'+sumH] = '#';
-                            sumV++;
+        Scanner sc = new Scanner(System.in);
+        char letraInicio = 'A';
+        char letraFinal = 'J';
+        char numeroInicio = '0';
+        for (int contador = 0; contador < barcos.length; contador++) {
+            int letra = coordenadas.charAt(0) - letraInicio;
+            int num = coordenadas.charAt(1) - numeroInicio;
+            int sum = 0;
+            int sum2 = 0;
+            if (pos.compareTo("0")==1) {
+                for (int i = 0; i < 1; ++i) {
+                    if ((num - 3) + barcos[i] < tableroJugador[1].length) {
+                        for (int j = 0; j < barcos[contador]; ++j) {
+                            tableroJugador[letra][num + sum] = '#';
+                            ++sum;
                         }
                     } else {
-                        cont--;
+                        contador--;
                     }
+                    Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
                 }
-                Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
+            } else if (pos.compareTo("1")==1) {
+                for (int i = 0; i < 1; ++i) {
+                    if ((num - 3) + barcos[i] <= tableroJugador[1].length) {
+                        for (int j = 0; j < barcos[contador]; ++j) {
+                            tableroJugador[letra + sum2][coordenadas.charAt(1) - numeroInicio] = '#';
+                            ++sum2;
+                        }
+                    } else {
+                        contador--;
+                    }
+                    Mostrar.crearTablero(tableroJugador, tableroDisparosJugador);
+                }
 
-            }else {
-                System.out.println(ANSI_BLACK_BACKGROUND+ANSI_RED+"LEE BIEN"+ ANSI_RESET);
+            } else{
+                contador--;
             }
         }
     }

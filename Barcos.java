@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Barcos {
     //COLOCA LOS BARCOS DEL PC PERO SI COLISIONAN O SALEN DEL MAPA PETA
     //
