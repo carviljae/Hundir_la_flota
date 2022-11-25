@@ -21,7 +21,6 @@ public class Entrada {
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_GREEN+"Coordenada aceptada"+ ANSI_RESET);
         return coordenadas;
     }
-
     //Comprueba que el tamaño de la coordenada sea 2
     public static boolean esCorrectoTamanyo(String coordenadas) {
         if (coordenadas.length() == 2) {
