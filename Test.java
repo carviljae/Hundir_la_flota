@@ -67,12 +67,12 @@ public class Test {
             for (int i=0; i<barcos.length;i++) {
                 tablero[coordenadas.charAt(1)-48][coordenadas.charAt(0)-65]='*';
             }
-            Mostrar.mostrarTableroJugador(tablero, tablero);
+            Mostrar.mostrarTablero(tablero, tablero);
         }else if (pos.compareTo("H")==0){
             for (int i=0; i<barcos.length;i++) {
                 tablero[i][0] = '*';
             }
-            Mostrar.mostrarTableroJugador(tablero, tablero);
+            Mostrar.mostrarTablero(tablero, tablero);
 
         }else {
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_RED+"LEE BIEN"+ ANSI_RESET);

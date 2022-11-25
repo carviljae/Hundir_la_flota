@@ -1,83 +1,40 @@
 public class Mostrar {
-    //Muestra los tableros del PC
-    static void mostrarTableroPC(char[][] tableroPC, char[][] tableroDisparosPC) {
+    public static void mostrarTablero(char[][] tablero, char[][] tableroDisparos) {
         char letra = 'A';
+        int num = 0;
+        int num2 = 0;
 
-        for (int i = 0; i < tableroPC.length; i++, letra++) {
-            for (int q = 0; q < 2; q++) {
-                System.out.print(ANSI_BLUE+"        " + letra + "  ");
-                for (int h = 0; h < tableroPC.length - 1; h++) {
-                    System.out.print(tableroPC[h][i] + "  ");
-                }
+        for (int i=0;i<tablero.length;i++, letra++) {
+            System.out.print("\t"+WHITE_BOLD_BRIGHT+(letra) + "\t"+ANSI_RESET);
+            for (int j=0;j<tablero[0].length;j++ ) {
+                System.out.print(ANSI_BLUE +tablero[i][j]+ANSI_RESET+"\t");
+            }
+            System.out.print("\t\t");
+            System.out.print(WHITE_BOLD_BRIGHT+(letra) + "\t"+ANSI_RESET);
+            for (int j=0;j<tableroDisparos[0].length;j++ ) {
+                System.out.print(ANSI_BLUE +tableroDisparos[i][j]+ANSI_RESET+"\t");
             }
             System.out.println();
         }
-        for (int t = -1; t < tableroPC.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("         ");
-            } else {
-                System.out.print("  " + t);
-            }
+        System.out.print("\t\t");
+        for (int i=0;i< tablero.length;i++,num++) {
+            System.out.print(WHITE_BOLD_BRIGHT+num + "\t"+ANSI_RESET);
         }
-        for (int t = -1; t < tableroPC.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("           ");
-            } else {
-                System.out.print("  " + t);
-            }
+        System.out.print("\t\t");
+        System.out.print(" " + "\t");
+        for (int i=0;i< tableroDisparos.length;i++, num2++) {
+            System.out.print(WHITE_BOLD_BRIGHT+num2 + "\t"+ANSI_RESET);
         }
-        System.out.println();
-        System.out.println();
+        System.out.println("\n");
     }
-    //Muestra los tableros del jugador
-    static void mostrarTableroJugador(char[][] tablero, char[][] tableroDisparosJugador) {
-        char letra = 'A';
-
-        for (int i = 0; i < tablero.length; i++, letra++) {
-            for (int q = 0; q < 2; q++) {
-
-                System.out.print(ANSI_BLUE+"        " + letra + "  ");
-                for (int h = 0; h < tablero.length - 1; h++) {
-
-                    System.out.print(tablero[h][i] + "  ");
-                }
-            }
-            System.out.println();
-        }
-        for (int t = -1; t < tablero.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("         ");
-            } else {
-                System.out.print(ANSI_BLUE+"  " + t + ANSI_RESET);
-            }
-        }
-        for (int t = -1; t < tablero.length - 1; t++) {
-            if (t == -1) {
-                System.out.print("           ");
-            } else {
-                System.out.print(ANSI_BLUE+"  " + t + ANSI_RESET);
-            }
-        }
-        System.out.println();
-        System.out.println();
-    }
-    //Rellena los tableros del jugador
-    static void rellenarTableroJugador(char[][] tablero, char[][] tableroDisparosJugador) {
-        for (int k = 0; k < tablero[0].length; k++) {
-            for (int x = 0; x < 10; x++) {
-                tablero[x][k] = '~';
+    public static void rellenarTablero(char[][] tablero){
+        for (int i=0;i<tablero.length;i++) {
+            for (int j=0;j<tablero.length;j++) {
+                tablero[i][j] = '~';
             }
         }
     }
-    //Rellena los tableros del PC
-    static void rellenarTableroPC(char[][] tableroPC, char[][] tableroDisparosPC) {
-        for (int k = 0; k < tableroPC[0].length; k++) {
-            for (int x = 0; x < 10; x++) {
-                tableroPC[x][k] = '~';
-            }
-        }
-    }
-    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
     public static final String ANSI_RESET = "\u001B[0m";
+    public static final String WHITE_BOLD_BRIGHT = "\033[1;97m";
     public static final String ANSI_BLUE = "\u001B[34m";
 }

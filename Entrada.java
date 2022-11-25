@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Entrada {
 
     //Pide una coordenada y llama a los metodos para comprobar que esté correcta
