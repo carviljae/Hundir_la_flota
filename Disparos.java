@@ -25,6 +25,7 @@ public class Disparos {
     }
     public static void disparo( char[][] tablero, char[][]tableroDisparosJugador,char[][] tableroPC, char[][]tableroDisparosPC, String coordenadas) {
             tableroDisparosJugador[coordenadas.charAt(0) - 'A'][coordenadas.charAt(1) - '0'] = '*';
+            tableroPC[coordenadas.charAt(0) - 'A'][coordenadas.charAt(1) - '0'] = '*';
 
         Mostrar.mostrarTablero(tablero, tableroDisparosJugador);
         Mostrar.mostrarTablero(tableroPC,tableroDisparosPC);

@@ -47,15 +47,10 @@ public class Prueba2 {
     }
     //Creamos el barco
     public static void crearBarco(String pos, char[][] tablero, String coordenadas) {
-
-
         if (pos.compareTo("V")==0) {
-
                 tablero[coordenadas.charAt(1)-48][coordenadas.charAt(0)-65]='*';
-
             for (int i=0; i<barcos.length;i++) {
                 tablero[coordenadas.charAt(1)-48][i]='*';
-
             }
             Mostrar.mostrarTablero(tablero, tablero);
         }else if (pos.compareTo("H")==0){
@@ -63,7 +58,6 @@ public class Prueba2 {
                 tablero[i][0] = '*';
             }
             Mostrar.mostrarTablero(tablero, tablero);
-
         }else {
             System.out.println(ANSI_BLACK_BACKGROUND+ANSI_RED+"LEE BIEN"+ ANSI_RESET);
         }

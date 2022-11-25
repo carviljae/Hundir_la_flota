@@ -37,4 +37,6 @@ public class Mostrar {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String WHITE_BOLD_BRIGHT = "\033[1;97m";
     public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
+    public static final String ANSI_BLUE_BACKGROUND = "\u001B[40m";
 }
